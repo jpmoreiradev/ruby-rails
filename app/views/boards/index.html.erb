@@ -1,0 +1,9 @@
+<h1>Boards do Time <%= @team.name %></h1>
+
+<%= link_to "Novo Board", new_team_board_path(@team) %>
+
+<ul>
+  <% @boards.each do |board| %>
+    <li><%= link_to board.title, team_board_path(@team, board) %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,11 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  url: 'postgresql://neondb_owner:npg_u5aqLtmSie2h@ep-round-bird-acfp5g16-pooler.sa-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+
+development:
+  <<: *default
+
+test:
+  <<: *default

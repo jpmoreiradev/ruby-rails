@@ -1,0 +1,18 @@
+<div class="max-w-xl mx-auto mt-12 font-sans space-y-4">
+  <h1 class="text-3xl font-bold">Bem-vindo ao Gestor de Projetos!</h1>
+  <p>Escolha um time para começar:</p>
+
+  <% if @teams.any? %>
+    <% @teams.each do |team| %>
+      <p>
+        <%= link_to team.name, team_boards_path(team), class: "text-blue-600 hover:underline" %>
+      </p>
+    <% end %>
+  <% else %>
+    <p class="text-gray-500">Nenhum time criado ainda.</p>
+  <% end %>
+
+  <p>
+    <%= link_to "Criar Novo Time", new_team_path, class: "inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" %>
+  </p>
+</div>
